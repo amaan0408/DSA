@@ -1,10 +1,8 @@
 package com.algorithmsPractice.random;
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
 
-public class NonRepeat {
+public class FirstNonRepeatingElementArray {
     public int repeated(int [] arr){
         // [7 3 7 2 3 9]
         HashMap<Integer,Integer> map = new HashMap<>();
@@ -19,8 +17,8 @@ public class NonRepeat {
         return -1;
     }
     public static void main(String[] args) {
-        NonRepeat nr = new NonRepeat();
-        int arr [] = {11,22,33,33,22,11,5,11,22,44,1,7};
+        FirstNonRepeatingElementArray nr = new FirstNonRepeatingElementArray();
+        int arr [] = {11,22,33,33,22,11,11,22};
         System.out.println(nr.repeated(arr));
     }
 }

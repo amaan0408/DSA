@@ -76,15 +76,10 @@ public class mergeSort {
     public static void main(String[] args) {
 
         mergeSort ms = new mergeSort();
-
         int[] arr = {1, 6, 3, 9};
-
         ms.mergeSorted(arr, 0, arr.length - 1);
-
         for (int value : arr) {
             System.out.print(value + " ");
         }
-
-        System.out.println(Integer.compare(1,6));
     }
 }
