@@ -1,24 +1,36 @@
 package com.algorithmsPractice.random;
 
-import java.util.Arrays;
-
 public class RotateArray {
-    public int [] rotate(int[] arr, int k) {
 
-        for(int x=0; x<k; x++) {
-            int last = arr[arr.length - 1];
+    private void reverse(int[] nums, int left, int right) {
+        while (left < right) {
+            int temp = nums[left];
+            nums[left] = nums[right];
+            nums[right] = temp;
 
-            for (int i = arr.length - 1; i >= 1; i--) {
-                arr[i] = arr[i - 1];
-            }
-            arr[0] = last;
+            left++;
+            right--;
         }
-        return arr;
     }
+
+    public int[] rotate(int[] nums, int k) {
+        k %= nums.length;
+
+        // 1. Reverse the entire array
+        reverse(nums, 0, nums.length - 1);
+
+        // 2. Reverse the first k elements
+        reverse(nums, 0, k - 1);
+
+        // 3. Reverse the remaining elements
+        reverse(nums, k, nums.length - 1);
+        return nums;
+    }
+
     public static  void main(String[] args) {
         RotateArray rotateArray = new RotateArray();
         int arr [] ={1,2,3,4,5};
-        int result [] = rotateArray.rotate(arr,3);
+        int result[] = rotateArray.rotate(arr,3);
         for(int i=0; i<result.length; i++){
             System.out.print(result[i]+" ");
         }
