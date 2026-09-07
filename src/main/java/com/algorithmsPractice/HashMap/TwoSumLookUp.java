@@ -17,8 +17,9 @@ public class TwoSumLookUp {
     }
     public static  void main(String[] args) {
         TwoSumLookUp twoSumLookUp = new TwoSumLookUp();
-        int [] arr = {2,7,11,15};
+        int [] arr = {1, 2, 3,4,5};
         int target = 9;
-        System.out.println(Arrays.toString(twoSumLookUp.twoSum(arr,target)));
+
+
     }
 }
