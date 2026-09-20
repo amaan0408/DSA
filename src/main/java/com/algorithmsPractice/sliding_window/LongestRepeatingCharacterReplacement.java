@@ -1,5 +1,7 @@
 package com.algorithmsPractice.sliding_window;
 
+import java.util.*;
+
 public class LongestRepeatingCharacterReplacement {
     public int characterReplacement(String s, int k) {
         int maxFreq = 0;
@@ -8,6 +10,8 @@ public class LongestRepeatingCharacterReplacement {
         int left = 0;
         int len = 0;
         int maxLen = 0;
+
+       Map<Integer, Map<String, Boolean>> map = new HashMap<>();
 
 
         for(int right = 0; right<s.length(); right++){
