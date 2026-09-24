@@ -14,6 +14,7 @@ public class NextGreaterElement {
             if(arr[i]==temp){
                 arr[i]=-1;
             }
+
         }
         return arr;
     }
