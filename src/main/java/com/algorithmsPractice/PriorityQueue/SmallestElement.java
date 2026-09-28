@@ -5,18 +5,17 @@ import java.util.PriorityQueue;
 
 public class SmallestElement {
     public int findSmallest(int[] arr, int k) {
-        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
-
+        PriorityQueue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());
         for(int n: arr){
-            if(pq.size()<k){
-                pq.offer(n);
+            if(queue.size() < k){
+                queue.offer(n);
             }
-            else if(n<pq.peek()){
-             pq.poll();
-             pq.offer(n);
+            else if(n<queue.peek()){
+                queue.poll();
+                queue.offer(n);
             }
         }
-        return pq.peek();
+        return queue.peek();
     }
     public static void main(String[] args) {
         SmallestElement smallestElement = new SmallestElement();
