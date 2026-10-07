@@ -12,6 +12,7 @@ public class minimumInRotatedAray {
                     left = mid + 1;
                     //start looking in right
 
+
                 } else {
                     min = Math.min(nums[mid], min);
                     //start looking in left;
