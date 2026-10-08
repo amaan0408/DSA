@@ -1,5 +1,7 @@
 package com.algorithmsPractice.random;
 
+import java.util.Scanner;
+
 public class TCS {
     public int charges(int n){
         int sum=0;
@@ -30,11 +32,16 @@ public class TCS {
     }
 
     public static void main(String[] args) {
-        TCS tcs = new TCS();
-        int arr [] = {10, 11, 12, 13, 13, 15, 16};
-        int result [] = tcs.missingAndDuplicate(arr);
-        for(int i=0;i<result.length;i++){
-            System.out.print(result[i]+" ");
+        int arr [] = {1,0,0,1,0,0,0,1,1};
+                    //0 1 2 3 4 5 6 7 8
+        int index = 0;
+        int maxIndex=0;
+
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==1){
+                index++;
+                maxIndex=Math.max(maxIndex,index);
+            }
         }
     }
 }
