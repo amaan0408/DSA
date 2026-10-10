@@ -15,6 +15,7 @@ public class PrimeNumber {
           i++;
           j--;
       }
+
       return true;
     }
     public  static void main(String[] args) {
