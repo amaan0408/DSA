@@ -19,6 +19,7 @@ public class firstandlastposition {
                 right = mid - 1;
             }
         }
+
         left=0;
         right=nums.length-1;
         while (left <= right) {
