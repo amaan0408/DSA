@@ -7,22 +7,23 @@ public class ValidParenthesis {
 
         public boolean isValid(String s) {
             Stack<Character> stack = new Stack<>();
-            HashMap<Character, Character> map = new HashMap<>();
-            map.put('(', ')');
-            map.put('{', '}');
-            map.put('[', ']');
 
-            for (char c : s.toCharArray()) {
-                if (c == '(' || c == '[' || c == '{') {
-                    stack.push(c);
+            for (int i = 0; i < s.length(); i++) {
+                char ch = s.charAt(i);
+                if (ch == '[' || ch == '{' || ch == '(') {
+                    stack.push(ch);
                 } else {
                     if (stack.isEmpty()) {
                         return false;
+                    } else {
+                        if (s.charAt(i) == ')' && stack.peek() == '('
+                                || s.charAt(i) == '}' && stack.peek() == '{'
+                                || s.charAt(i) == ']' && stack.peek() == '[') {
+                            stack.pop();
+                        } else {
+                            return false;
+                        }
                     }
-                    if (map.get(stack.peek()) != c) { // if stored Key is not equal to Incoming char.
-                        return false;
-                    }
-                    stack.pop();
                 }
             }
             return stack.isEmpty();
