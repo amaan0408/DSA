@@ -24,6 +24,7 @@ public class ValidParenthesis {
                             return false;
                         }
                     }
+
                 }
             }
             return stack.isEmpty();
