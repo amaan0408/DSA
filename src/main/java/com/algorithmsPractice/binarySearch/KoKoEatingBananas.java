@@ -9,6 +9,7 @@ public class KoKoEatingBananas {
                 max = p;
             }
         }
+
         int right = max;
 
         while (left < right) {
